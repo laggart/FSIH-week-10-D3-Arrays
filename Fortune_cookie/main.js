@@ -16,14 +16,25 @@ const vaticinio = ["¡Deja de buscar en Internet y ve a hacer algo productivo!",
 "La fortuna te sonríe... y te anima a sonreír también, aunque sea por el chiste malo de esta galleta.",
 ]
 
-function compañeroAleatorio() {
-    const indexAleatorio = Math.floor(Math.random() * compañeros.length)
-    return compañeros[indexAleatorio] 
+function fortuneCookie () {
+   
+    function generarAleatorio(array) {
+        const indexAleatorio = Math.floor(Math.random() * array.length);
+        return array[indexAleatorio]
+    }
+    
+        const compañeroAleatorrio = generarAleatorio(compañeros)
+        const vaticinioAleatorio = generarAleatorio(vaticinio)
+    
+    
+    
+        console.log(`vaticinio para ${compañeroAleatorrio}: `)
+        console.log(vaticinioAleatorio)
+        document.getElementById("frase").innerHTML = "";
+        document.getElementById("frase").innerHTML = `vaticinio para ${compañeroAleatorrio}: <br> ${vaticinioAleatorio}` 
+         
 }
 
-function vaticinioAleatorio() {
-    const fraseAleatoria = Math.floor(Math.random() * vaticinio.length)
-    return vaticinio[fraseAleatoria]
-}
+
 
 // Falta pintar el resultado
